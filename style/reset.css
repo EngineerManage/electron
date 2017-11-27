@@ -1,0 +1,21 @@
+html,
+body,
+header,
+footer,
+div,
+p,
+ul,
+ol,
+li,
+a,
+span,
+label,
+input {
+    margin: 0;
+    padding: 0; 
+}
+
+ol,
+ul {
+    list-style: none;
+}

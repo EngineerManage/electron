@@ -24,7 +24,7 @@ const menuTemplate = [{
         {
             label: '隐藏程序',
             accelerator: 'CmdOrCtrl+H',
-            click:() =>{
+            click: () => {
                 mainWin.minimize();
             }
         },
@@ -46,14 +46,15 @@ app.on('ready', () => {
     //  新建窗口
     mainWin = new BrowserWindow({
         width: 800,
-        height: 600
+        height: 600,
+        frame: false
     });
 
     //  主体窗口加载文件
     mainWin.loadURL(`file://${__dirname}/index.html`);
 
     //  打开开车者调试工具
-    // mainWin.webContents.openDevTools();
+    mainWin.webContents.openDevTools();
 
     //  主体窗口关闭
     mainWin.on('closed', () => {
