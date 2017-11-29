@@ -1,6 +1,38 @@
 #header {
     width: 100%;
     height: 50px;
-    background-color: rgb(198, 47, 47);
     -webkit-app-region: drag;
 }
+
+#left-bar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f2f2f6;
+    -webkit-app-region: drag;
+}
+
+#right-bar {
+    position: fixed;
+    width: calc(100% - 200px);
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+#right-bar .right-bar-top {
+    box-sizing: border-box;
+    padding: 0 20px 0 10px;
+    width: 100%;
+    height: 44px;
+    line-height: 48px;
+    border-bottom: 1px solid #ebebeb;
+    -webkit-app-region: drag;
+}
+
+.right-bar-top>div>a {
+	cursor: pointer;
+}
+

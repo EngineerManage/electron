@@ -1,6 +1,6 @@
 //  引入项目需要的库
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
-
+require('electron-reload')(__dirname);
 let mainWin = null; //  主体窗口
 
 const menuTemplate = [{
@@ -9,6 +9,7 @@ const menuTemplate = [{
             label: '关于程序',
             click: () => {
                 console.log('您点击了关于本程序');
+                mainWin.webContents.openDevTools();
             }
         },
         {
@@ -45,16 +46,14 @@ const menuTemplate = [{
 app.on('ready', () => {
     //  新建窗口
     mainWin = new BrowserWindow({
-        width: 800,
-        height: 600,
-        frame: false
+        width: 980,
+        height: 674,
+        title: '我的第一个Electron应用',
+        titleBarStyle: 'hidden'
     });
 
     //  主体窗口加载文件
     mainWin.loadURL(`file://${__dirname}/index.html`);
-
-    //  打开开车者调试工具
-    mainWin.webContents.openDevTools();
 
     //  主体窗口关闭
     mainWin.on('closed', () => {

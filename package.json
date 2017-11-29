@@ -9,6 +9,8 @@
   },
   "author": "WuFengliang",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "electron-reload": "^1.2.2"
+  },
   "devDependencies": {}
 }
